@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link href="{% static "css/blog_list.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block window %}
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>博客</h1>
+        <p>读书如不及时做笔记，犹如雨落大海没有</p> 
+        <p>踪迹！</p> 
+      </div>
+    </div>
+{% endblock %}
+
+{% block container %}
+<div class="container bs-docs-container">
+  <div class="row">
+    <div class="col-sm-9">
+       <div class="top blog-border">
+          <a href="#"><h1>用来写排序功能</h1></a>
+       </div>
+       <div class="blog-border">
+        {% for blog in blogs %}
+        <div class="list">
+          <a href="#"><h3>{{ blog.caption }}</h3></a>
+          <p>{{ blog.content }}</p><hr>
+          <p class="duanluo">by lw 评论(0) 浏览(0)</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+     <div class="col-sm-3 blog-border">
+      <div class="side-list">
+        <h4>随机阅读</h4><hr>
+        <ul>
+          {% for blog in blogs %}
+          <li><a href="#">{{ blog.caption }}</a></li>
+          {% endfor %}
+        </ul>
+        <a class="back-to-top" href="#top">
+          ↑返回顶部
+        </a>
+      </div>
+     </div>      
+  </div>
+</div>
+{% endblock %}

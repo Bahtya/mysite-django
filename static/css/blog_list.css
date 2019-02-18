@@ -1,0 +1,38 @@
+.blog-border{
+  border: 1px #ccc solid;
+  border-radius: 4px;
+
+}
+
+.top{
+  overflow: hidden;
+  margin-bottom: 1em;
+  padding: 1em 0 0.5em 1em;
+}
+
+.list{
+  clear: both;
+  border-bottom: 1px solid #ddd;
+  padding: 1.5em 1em 0.8em 1.5em;
+  overflow: hidden;
+}
+
+ul, ol, li {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #63498b;
+}
+
+.duanluo{
+  font-size: 70%;
+  color: #75878a;
+}

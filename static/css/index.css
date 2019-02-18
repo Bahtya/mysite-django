@@ -1,0 +1,15 @@
+a {
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #63498b;
+}
+
+ul, ol, li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul, ol {
+    list-style-type: none;
+  }

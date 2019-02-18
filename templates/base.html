@@ -1,0 +1,320 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static "img/favicon.ico" %}">
+    <title>lw Blog</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <link href="{% static "icon/iconfont.css" %}" rel="stylesheet">
+    {% block css %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-static-top bs-docs-nav" id="top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="../" class="navbar-brand">Blog</a>
+        </div>
+      <nav id="bs-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            
+          <li class="{{ isActive1 }}">
+            <a href="index" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-博客'])"><span class="iconfont icon-zhuye"></span>&nbsp;首页</a>
+          </li>
+          <li class="{{ isActive2 }}">
+            <a href="blog_list" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-首页'])"><span class="iconfont icon-ai-article"></span>&nbsp;博客</a>
+          </li>
+          <li class="{{ isActive3 }}">
+            <a href="about" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-关于'])"><span class="iconfont icon-guanyuwomen"></span>&nbsp;关于</a>
+          </li>
+          <li class="{{ isActive4 }}">
+            <a href="#" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-导航'])"><span class="iconfont icon-daohang"></span>&nbsp;导航</a>
+          </li>
+          <li class="{{ isActive5 }}">
+            <a href="#" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-定制'])"><span class="iconfont icon-dingzhikaifafuwu"></span>&nbsp;定制</a>
+          </li>
+          <li class="{{ isActive6 }}"><a class="reddot" href="#" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-网站实例'])" target="_blank"><span class="iconfont icon-wangzhanguanli"></span>&nbsp;站外</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="http://mb.bootcss.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'themes'])" target="_blank">主题/模板</a></li> -->
+            <li><a href="admin" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-Admin'])">Admin</a></li>
+          </ul>
+        </nav>
+      </div>
+      </header>
+
+{% block window %}
+    <!-- 大视图标题 -->
+
+{% endblock %}
+
+{% block container %}
+    <div class="container bs-docs-container">
+
+      <div class="row">
+        <div class="col-md-9" role="main">
+<div class="bs-docs-section">
+  <h1 id="sass" class="page-header"><a class="anchorjs-link " href="#sass" aria-label="Anchor link for: sass" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>使用 Sass</h1>
+  <p class="lead">虽然 Bootstrap 是基于 Less 构建的，我们还提供了一套<a href="https://github.com/twbs/bootstrap-sass">官方支持的 Sass 移植版</a>代码。我们将这个版本放在单独的 GitHub 仓库中进行维护，并通过脚本处理源码更新。</p>
+
+  <h2 id="sass-contents"><a class="anchorjs-link " href="#sass-contents" aria-label="Anchor link for: sass contents" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>包含的内容</h2>
+  <p>由于 Sass 移植版存放于单独的仓库，并针对不同的使用群体，这个项目中的内容与 Bootstrap 主项目有很大不同。这也是为了保证 Sass 移植版与更多基于 Sass 的系统相兼容。</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>路径</th>
+          <th>描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><code>lib/</code></th>
+          <td>Ruby gem code (Sass configuration, Rails and Compass integrations)</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>tasks/</code></th>
+          <td>Converter scripts (turning upstream Less to Sass)</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>test/</code></th>
+          <td>Compilation tests</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>templates/</code></th>
+          <td>Compass package manifest</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>vendor/assets/</code></th>
+          <td>Sass, JavaScript, and font files</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>Rakefile</code></th>
+          <td>Internal tasks, such as rake and convert</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>请访问 <a href="https://github.com/twbs/bootstrap-sass">Sass 移植版在 GitHub 上的仓库</a> 来了解这些文件。</p>
+
+
+  <h2 id="sass-installation"><a class="anchorjs-link " href="#sass-installation" aria-label="Anchor link for: sass installation" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>安装</h2>
+  <p>关于如何安装并使用 Bootstrap 的 Sass 移植版，请参考<a href="https://github.com/twbs/bootstrap-sass">GitHub 仓库中的 readme 文件</a>。 此仓库中包含了最新的源码以及如何与 Rails、Compass 以及标准 Sass 项目一同使用的详细信息。</p>
+  <p>
+    <a class="btn btn-lg btn-outline" href="https://github.com/twbs/bootstrap-sass">Bootstrap for Sass</a>
+  </p>
+</div>
+
+
+        </div>
+        
+        <div class="col-md-3" role="complementary">
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" style="">
+            <ul class="nav bs-docs-sidenav">
+              
+                <li class="">
+  <a href="#overview">概览</a>
+  <ul class="nav">
+    <li class=""><a href="#overview-doctype">HTML5 文档类型</a></li>
+    <li class=""><a href="#overview-mobile">移动设备优先</a></li>
+    <li class=""><a href="#overview-type-links">排版与链接</a></li>
+    <li class=""><a href="#overview-normalize">Normalize.css</a></li>
+    <li class=""><a href="#overview-container">布局容器</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#grid">栅格系统</a>
+  <ul class="nav">
+    <li class=""><a href="#grid-intro">简介</a></li>
+    <li class=""><a href="#grid-media-queries">媒体查询</a></li>
+    <li class=""><a href="#grid-options">栅格参数</a></li>
+    <li class=""><a href="#grid-example-basic">实例：从堆叠到水平排列</a></li>
+    <li class=""><a href="#grid-example-fluid">实例：流式布局容器</a></li>
+    <li class=""><a href="#grid-example-mixed">实例：移动设备和桌面屏幕</a></li>
+    <li class=""><a href="#grid-example-mixed-complete">实例：手机、平板、桌面</a></li>
+    <li class=""><a href="#grid-example-wrapping">实例：多余的列（column）将另起一行排列</a></li>
+    <li class=""><a href="#grid-responsive-resets">Responsive column resets</a></li>
+    <li class=""><a href="#grid-offsetting">列偏移</a></li>
+    <li class=""><a href="#grid-nesting">嵌套列</a></li>
+    <li class=""><a href="#grid-column-ordering">列排序</a></li>
+    <li class=""><a href="#grid-less">Less mixin 和变量</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#type">排版</a>
+  <ul class="nav">
+    <li class=""><a href="#type-headings">标题</a></li>
+    <li class=""><a href="#type-body-copy">页面主体</a></li>
+    <li class=""><a href="#type-inline-text">内联文本元素</a></li>
+    <li class=""><a href="#type-alignment">对齐</a></li>
+    <li class=""><a href="#type-transformation">改变大小写</a></li>
+    <li class=""><a href="#type-abbreviations">缩略语</a></li>
+    <li class=""><a href="#type-addresses">地址</a></li>
+    <li class=""><a href="#type-blockquotes">引用</a></li>
+    <li class=""><a href="#type-lists">列表</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#code">代码</a>
+  <ul class="nav">
+    <li class=""><a href="#code-inline">内联代码</a></li>
+    <li class=""><a href="#code-user-input">用户输入</a></li>
+    <li class=""><a href="#code-block">基本代码块</a></li>
+    <li class=""><a href="#code-variables">变量</a></li>
+    <li class=""><a href="#code-sample-output">程序输出</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#tables">表格</a>
+  <ul class="nav">
+    <li class=""><a href="#tables-example">基本实例</a></li>
+    <li class=""><a href="#tables-striped">条纹状表格</a></li>
+    <li class=""><a href="#tables-bordered">带边框的表格</a></li>
+    <li class=""><a href="#tables-hover-rows">鼠标悬停</a></li>
+    <li class=""><a href="#tables-condensed">紧缩表格</a></li>
+    <li class=""><a href="#tables-contextual-classes">状态类</a></li>
+    <li><a href="#tables-responsive">响应式表格</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#forms">表单</a>
+  <ul class="nav">
+    <li class=""><a href="#forms-example">基本实例</a></li>
+    <li class=""><a href="#forms-inline">内联表单</a></li>
+    <li><a href="#forms-horizontal">水平排列的表单</a></li>
+    <li><a href="#forms-controls">被支持的控件</a></li>
+    <li><a href="#forms-controls-static">静态控件</a></li>
+    <li><a href="#forms-control-focus">焦点状态</a></li>
+    <li><a href="#forms-control-disabled">禁用状态</a></li>
+    <li><a href="#forms-control-readonly">只读状态</a></li>
+    <li><a href="#forms-help-text">Help text</a></li>
+    <li><a href="#forms-control-validation">校验状态</a></li>
+    <li><a href="#forms-control-sizes">控件尺寸</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#buttons">按钮</a>
+  <ul class="nav">
+    <li><a href="#buttons-tags">可作为按钮使用的标签或元素</a></li>
+    <li><a href="#buttons-options">预定义样式</a></li>
+    <li><a href="#buttons-sizes">尺寸</a></li>
+    <li><a href="#buttons-active">激活状态</a></li>
+    <li><a href="#buttons-disabled">禁用状态</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#images">图片</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">响应式图片</a></li>
+    <li><a href="#images-shapes">图片形状</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#helper-classes">辅助类</a>
+  <ul class="nav">
+    <li><a href="#helper-classes-colors">情境文本颜色</a></li>
+    <li><a href="#helper-classes-backgrounds">情境背景色</a></li>
+    <li><a href="#helper-classes-close">关闭按钮</a></li>
+    <li><a href="#helper-classes-carets">三角符号</a></li>
+    <li><a href="#helper-classes-floats">快速浮动</a></li>
+    <li><a href="#helper-classes-center">让内容块居中</a></li>
+    <li><a href="#helper-classes-clearfix">清除浮动</a></li>
+    <li><a href="#helper-classes-show-hide">显示或隐藏内容</a></li>
+    <li><a href="#helper-classes-screen-readers">屏幕阅读器和键盘导航</a></li>
+    <li><a href="#helper-classes-image-replacement">图片替换</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#responsive-utilities">响应式工具</a>
+  <ul class="nav">
+    <li><a href="#responsive-utilities-classes">可用的类</a></li>
+    <li><a href="#responsive-utilities-print">打印类</a></li>
+    <li><a href="#responsive-utilities-tests">测试用例</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#less">使用 Less</a>
+  <ul class="nav">
+    <li><a href="#less-bootstrap">编译 Bootstrap</a></li>
+    <li><a href="#less-variables">变量</a></li>
+    <li><a href="#less-mixins-vendor">针对特定厂商的 mixin</a></li>
+    <li><a href="#less-mixins-utility">工具 mixin</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#sass">使用 Sass</a>
+  <ul class="nav">
+    <li class=""><a href="#sass-contents">包含的内容</a></li>
+    <li class=""><a href="#sass-installation">安装</a></li>
+  </ul>
+</li>
+
+              
+            </ul>
+            <a class="back-to-top" href="#top">
+              返回顶部
+            </a>
+            
+          </nav>
+        </div>
+        
+      </div>
+    </div>
+{% endblock %}
+    <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer">
+  <div class="container">
+    <ul class="bs-docs-footer-links">
+      <li><a href="https://github.com/twbs/bootstrap">GitHub 仓库</a></li>
+      <li><a href="../getting-started/#examples">实例</a></li>
+      <li><a href="http://www.youzhan.org">优站精选</a></li>
+      <li><a href="../about/">关于</a></li>
+    </ul>
+
+    <p>by <a href="#" target="_blank">@lw</a>.</p>
+
+    <p>本项目源码受 <a rel="license" href="#" target="_blank">**</a>开源协议保护，文档受 <a rel="license" href="#" target="_blank">lw</a> 开源协议保护。</p>
+
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+<script src="{% static "js/base.js" %}"></script>
+
+
+
+  
+
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="10" style="font-weight:bold;font-size:10pt;font-family:Arial, Helvetica, Open Sans, sans-serif">140x140</text></svg>
+</body>
+</html>
