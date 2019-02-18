@@ -27,3 +27,11 @@ def blog_list(request):
         "isActive2":"active"
     }
     return render(request,"blog_list.html",data)
+
+def blog(request):
+    blogs = Blog.objects.all()
+    data={
+        "blogs":blogs,
+        "isActive2":"active"
+    }
+    return render(request,"blog.html",data)
