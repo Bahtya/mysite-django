@@ -1,0 +1,5 @@
+[client]
+database = lwblog
+user = root
+password = ailw1314
+default-character-set = utf8
