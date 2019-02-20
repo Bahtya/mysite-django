@@ -26,7 +26,7 @@
        <div class="blog-border">
         {% for blog in blogs %}
         <div class="list">
-          <a href="/blog/{{ blog.pk }}"><h3>{{ blog.caption }}</h3></a>
+          <a href="/blog{{ blog.pk }}"><h3>{{ blog.caption }}</h3></a>
           <p>{{ blog.content | truncatechars:120 }}</p><hr>
           <p class="duanluo">发表日期:{{ blog.publish_time }} by lw 评论(0) 浏览(0)</p>
         </div>

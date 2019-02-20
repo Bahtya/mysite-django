@@ -28,10 +28,10 @@ def blog_list(request):
     }
     return render(request,"blog_list.html",data)
 
-def blog(request):
-    blogs = Blog.objects.all()
+def blog(request,num):
+    res = Blog.objects.get(pk=num)
     data={
-        "blogs":blogs,
+        "test" : res.caption ,
         "isActive2":"active"
     }
     return render(request,"blog.html",data)
