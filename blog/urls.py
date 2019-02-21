@@ -7,5 +7,5 @@ urlpatterns = [
     path('about', views.about),
     path('contact', views.contact),
     path('blog_list', views.blog_list),
-    path('blog<int:num>', views.blog),
+    path('blog/(?P<num>[0-9]+)', views.blog),
 ]
