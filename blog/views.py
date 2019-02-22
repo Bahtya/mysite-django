@@ -8,16 +8,22 @@ def index(request):
     data={
         "blogs":blogs,
         "tags":tags,
-        "isActive1":"active"
+        "isActive1":"active"#导航栏激活状态
     }
     return render(request,"index.html",data)
 
 def about(request):
     blogs = Blog.objects.all()
-    return render(request,"about.html")
+    data={
+        "isActive3":"active"#导航栏激活状态
+    }
+    return render(request,"about.html",data)
 
 def contact(request):
     blogs = Blog.objects.all()
+    data={
+        "isActive4":"active"#导航栏激活状态
+    }
     return render(request,"contact.html")
 
 def blog_list(request):
@@ -48,7 +54,7 @@ def blog_list(request):
     data={
         "page_list":page_list,
         "blogs":page_n,
-        "isActive2":"active"
+        "isActive2":"active"#导航栏激活状态
     }
     return render(request,"blog_list.html",data)
 
