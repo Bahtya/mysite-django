@@ -30,7 +30,7 @@
             <span class="views-count">阅读 14</span><span class="comments-count">评论 0</span><span class="likes-count">喜欢 1</span></div>
           </div>
       </div>
-      <div class=content>{{blog.content}}</div>
+      <div class=content>{{blog.content | safe}}</div>
     </div>
     <!-- Optional: clear the XS cols if their content doesn't match in height -->
     <div class="clearfix visible-xs-block"></div>

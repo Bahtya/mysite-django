@@ -19,4 +19,12 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
+
+
+#上传的图片是到media中，不是在static中。我们还需要设置media可被访问，如下设置可用于开发中使用，若部署到服务器可用服务器软件设置：
+from django.conf import settings
+from django.conf.urls.static import static
+ 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

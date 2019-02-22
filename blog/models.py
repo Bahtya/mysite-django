@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Author(models.Model):
@@ -28,7 +29,7 @@ class Blog(models.Model):
     caption = models.CharField(max_length=50)
     author = models.ForeignKey(Author,on_delete=(False))  #一对一外键，关联作者模型
     tags = models.ManyToManyField(Tag,blank=True) #多对多字段，绑定下面的Tag模型
-    content = models.TextField()  #Text长文本字段，可以写很多内容
+    content = RichTextUploadingField()  #Text长文本字段，可以写很多内容（富文本编辑器）
     
     publish_time = models.DateTimeField(auto_now_add=True) #日期，新增自动写入
     update_time = models.DateTimeField(auto_now=True) #日期，修改自动更新
