@@ -23,7 +23,7 @@ def contact(request):
 def blog_list(request):
     page = request.GET.get('page',1)#get请求传参数，page如果不存在默认返回1
     blogs = Blog.objects.all()
-    paginator=Paginator(blogs,2)#实例化分页器，第一个参数为对象，第二个参数为每页的页数
+    paginator=Paginator(blogs,10)#实例化分页器，第一个参数为对象，第二个参数为每页的页数
     page_n = paginator.get_page(page) #返回一个某一页分页器对象，此方式如果page不符合规范，会返回1
     page_countor = page_n.number#number取出当前页的页码
     #优化页码溢出，并每次只显示5页
