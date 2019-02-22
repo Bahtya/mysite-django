@@ -40,7 +40,7 @@
                   <a href="?page={{ blogs.previous_page_number }}" aria-label="Previous">&laquo;</a>
               {% endif %}
           </li>
-            {% for i in blogs.paginator.page_range %}
+            {% for i in page_list %}
               {% if i == blogs.number %}
               <li class="active"><span>{{i}}</span></li>
               {% else %}
