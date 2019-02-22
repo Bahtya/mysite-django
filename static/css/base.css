@@ -131,6 +131,7 @@
     margin-bottom: 0;
     background-color: #fff;
     border-bottom: 0;
+    border-bottom: 1px solid #ddd;
   }
   .bs-home-nav .bs-nav-b {
     display: none;

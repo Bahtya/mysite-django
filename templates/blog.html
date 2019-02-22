@@ -7,24 +7,34 @@
 
 
 {% block container %}
-<div class="container bs-docs-container">
+<div class="container">
   <div class="row">
-    <div class="col-sm-9">
-       <div class="top blog-border">
-          <h1>{{ test}}用来写排序功能</h1>
-     <div class="col-sm-3 blog-border">
-      <div class="side-list">
-        <h4>随机阅读</h4><hr>
-        <ul>
-          {% for blog in blogs %}
-          <li><a href="#">{{ blog.caption }}</a></li>
-          {% endfor %}
-        </ul>
-        <a class="back-to-top" href="#top">
-          ↑返回顶部
+    <div class="col-xs-5 col-sm-3"></div>
+    <div class="col-xs-8 col-sm-6">
+      <h1>{{blog.caption}}</h1>
+      <div class=author>
+        <a class="avatar" href="#">
+          <img src="{% static 'img/avatar.jpg' %}" alt="...">
         </a>
+        <div class="info">
+            <span class="name"><a href="/u/ebd8139bc1e7">{{blog.author}}</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow" href="#"><i class="ic-follow"></i><span class="glyphicon glyphicon-plus
+              " aria-hidden="true"></span>&nbsp;<span>关注</span></a>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 简书钻 -->
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time">{{ blog.publish_time }}</span>
+              <span class="wordage">字数 1027</span>
+            <span class="views-count">阅读 14</span><span class="comments-count">评论 0</span><span class="likes-count">喜欢 1</span></div>
+          </div>
       </div>
-     </div>      
+      <div class=content>{{blog.content}}</div>
+    </div>
+    <!-- Optional: clear the XS cols if their content doesn't match in height -->
+    <div class="clearfix visible-xs-block"></div>
+    <div class="col-xs-5 col-sm-3"></div>
   </div>
 </div>
 {% endblock %}
