@@ -31,7 +31,7 @@
         {% for blog in blogs %}
         <div class="list">
           <a href="/blog/{{ blog.pk }}"><h3><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;{{ blog.caption }}</h3></a>
-          <p>{{ blog.content | safe | truncatewords_html:120 }}</p><hr>
+          <p>{{ blog.content | safe | truncatechars:120 }}</p><hr>
           <p class="duanluo">{{ blog.publish_time | date:'Y-m-d' }} by {{blog.author}} 评论(0) 浏览(0)</p>
         </div>
         {% endfor %}
