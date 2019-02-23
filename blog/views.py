@@ -32,7 +32,7 @@ def blog_list(request):
     paginator=Paginator(blogs,10)#实例化分页器，第一个参数为对象，第二个参数为每页的页数
     page_n = paginator.get_page(page) #返回一个某一页分页器对象，此方式如果page不符合规范，会返回1
     page_countor = page_n.number#number取出当前页的页码
-    #优化页码溢出，并每次只显示5页
+    #优化页码溢出，并每次只显示5页功能实现
     if page_countor <= 3 :
         page_list = page_n.paginator.page_range[:5]
     elif page_countor >= page_n.paginator.num_pages-2:
@@ -59,7 +59,7 @@ def blog_list(request):
     return render(request,"blog_list.html",data)
 
 def blog(request,num):
-    blog = Blog.objects.get(pk=num)
+    blog = Blog.objects.get(pk=num)#按照传回的参数pk值取出对应的blog对象
     data={
         "blog" : blog ,
         "isActive2":"active"
