@@ -26,11 +26,11 @@
               <!-- 简书钻 -->
               <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
                 <span class="publish-time">{{ blog.publish_time | date:'Y-m-d'}}</span>
-              <span class="wordage">字数 1027</span>
-            <span class="views-count">阅读 14</span><span class="comments-count">评论 0</span><span class="likes-count">喜欢 1</span></div>
+              <span class="wordage">字数 {{ blog.content | length }}</span>
+            <span class="views-count">阅读 14 </span><span class="comments-count">评论 0 </span><span class="likes-count">喜欢 1</span></div>
           </div>
       </div>
-      <div class=content>{{blog.content | safe}}</div>
+      <div class=content>{% autoescape off %}{{blog.content | safe}}{% endautoescape %}</div>
     </div>
     <!-- Optional: clear the XS cols if their content doesn't match in height -->
     <div class="clearfix visible-xs-block"></div>
