@@ -25,13 +25,13 @@
 
 
 
-          <h1>用来写排序功能</h1>
+          <h3>最近更新：</h3>
        </div>
        <div class="blog-border">
         {% for blog in blogs %}
         <div class="list">
           <a href="/blog/{{ blog.pk }}"><h3><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;{{ blog.caption }}</h3></a>
-          <p>{{ blog.content | safe | truncatechars:120 }}</p><hr>
+          {{ blog.content | safe | truncatechars:120 }}<hr>
           <p class="duanluo">{{ blog.publish_time | date:'Y-m-d' }} by {{blog.author}} 评论(0) 浏览(0)</p>
         </div>
         {% endfor %}
