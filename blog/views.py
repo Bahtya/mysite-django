@@ -1,11 +1,14 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import *
+from .poem_api import *
 
 def index(request):
     tags = Tag.objects.all() 
-    blogs = Blog.objects.all()   
+    blogs = Blog.objects.all() 
+    poem=get_index_page()
     data={
+        "poem":poem,
         "blogs":blogs,
         "tags":tags,
         "isActive1":"active"#导航栏激活状态
