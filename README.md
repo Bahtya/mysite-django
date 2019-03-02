@@ -1,40 +1,95 @@
 # mysite
-个人博客模板
-###配置视图
-    frome django.http import HttpResponse  
-    def index(request):  
-        return HttpResponse ('This is a view')  
-或  
- `return render(request,'app/index.html'),{'模板里的变量名':变量})` 
-###配置路由urls.py  
- `from django.conf.urls import url,include`   
- `from django.contrib import admin` 
 
-    urlpaterns=[
-        url(r'^'admin/',admin.site.urls),  
-        url(r'^',incude('myapp.urls'))  
-    ]  
-在app目录下创建urls.py：  
- `from django.conf.urls import url`   
- `from . import views` 
- `urlpaterns=[  
-    url(r'^$',views.index),
-    url(r'^\d+/$',views.),
-    ]  `   
-###模板  templates目录里  
-配置cv>vc
+[lw个人博客](http://148.70.69.254/)
 
-模板路径（settings.py）：  
- `TEMPLATES:{'DIR':[os.path.join(BASE_DIR,'templates'  
-]`   
-###配置static  
-settings.py  
-最后一行添加：  
-    STATICFILES_DIRS=[
-        os.path.join(BASE_DIR,'static')
-    ]  
-上传目录：  
-    MDEIA_ROOT=os.path.join(BASE_DIR,r'static/mdeia')
-###模板语法  
-变量语法：{{变量名}}  
-语句语法：{%语句%}
+开发语言：Python
+
+后端应用框架：Django2.1
+
+前端框架：Bootstrap(css)、jQuery(js)
+
+web服务：Apache、Nginx皆可用
+
+参考：
+
+[Django开发手册](https://docs.djangoproject.com/en/2.1/)
+
+[Bootstrap中文网](http://www.bootcss.com/)
+
+[jQuery插件库](http://www.jq22.com/)
+
+### 目录结构
+
+```shell
+mysite
+├── blog #blog应用层
+│   ├── admin.py #配置后台
+│   ├── apps.py #应用入口
+│   ├── __init__.py #python项目入口（空文件）
+│   ├── migrations #本地数据
+│   │   ├── 0001_initial.py 
+│   │   ├── 0002_auto_20190213_2106.py 
+│   │   ├── __init__.py
+│   ├── models.py #模型
+│   ├── poem_api.py #功能模块，实现诗词爬取功能
+│   ├── tests.py #暂时无用
+│   ├── urls.py #二级路由配置文件
+│   └── views.py #视图
+├── db.sqlite3 #sqlite3数据库文件
+├── manage.py #调试时的主控制文件
+├── media #上传/下载目录
+│   └── upload
+│       └── 2019
+│           └── 02
+│               └── 22
+│                   └── u5233808181369404823fm26gp0.jpg
+├── mysite #站点配置层
+│   ├── __init__.py #同上
+│   ├── mysql.cnf #远程数据库信息配置（暂时无用）
+│   ├── settings.py #全站配置文件
+│   ├── urls.py #主路由（一级路由）
+│   └── wsgi.py #wsgi部署文件
+├── README.md #本文档
+├── static #静态文件
+│   ├── css
+│   │   ├── about.css
+│   │   ├── base.css
+│   │   ├── blog.css
+│   │   ├── blog_list.css
+│   │   ├── ie10-viewport-bug-workaround.css
+│   │   └── index.css
+│   ├── icon
+│   │   ├── favicon.ico
+│   │   ├── iconfont.css
+│   │   ├── iconfont.eot
+│   │   ├── iconfont.ttf
+│   │   ├── iconfont.woff
+│   │   └── iconfont.woff2
+│   ├── img
+│   │   ├── avatar.jpg
+│   │   ├── bg.jpg
+│   │   ├── compatible_chrome.gif
+│   │   ├── compatible_firefox.gif
+│   │   ├── compatible_ie.gif
+│   │   ├── compatible_opera.gif
+│   │   ├── compatible_safari.gif
+│   │   ├── django.jpg
+│   │   ├── lamp.jpg
+│   │   ├── qrcode.jpg
+│   │   └── responsive.jpg
+│   └── js
+│       ├── base.js
+│       ├── ie10-viewport-bug-workaround.js
+│       ├── ie-emulation-modes-warning.js
+│       ├── index.js
+│       └── layui.all.js
+└── templates #模板层
+    ├── about.html
+    ├── base.html
+    ├── blog.html
+    ├── blog_list.html
+    ├── contact.html
+    └── index.html
+```
+
+
