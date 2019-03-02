@@ -2,11 +2,11 @@
 
 [lw个人博客](http://148.70.69.254/)
 
-开发语言：Python
+开发语言：`Python`
 
-后端应用框架：Django2.1
+后端应用框架：`Django2.1`
 
-前端框架：Bootstrap(css)、jQuery(js)
+前端框架：`Bootstrap`(css)、`jQuery`(js)
 
 web服务：Apache、Nginx皆可用
 
@@ -53,42 +53,10 @@ mysite
 ├── static #静态文件
 │   ├── css
 │   │   ├── about.css
-│   │   ├── base.css
-│   │   ├── blog.css
-│   │   ├── blog_list.css
-│   │   ├── ie10-viewport-bug-workaround.css
-│   │   └── index.css
-│   ├── icon
-│   │   ├── favicon.ico
-│   │   ├── iconfont.css
-│   │   ├── iconfont.eot
-│   │   ├── iconfont.ttf
-│   │   ├── iconfont.woff
-│   │   └── iconfont.woff2
 │   ├── img
 │   │   ├── avatar.jpg
-│   │   ├── bg.jpg
-│   │   ├── compatible_chrome.gif
-│   │   ├── compatible_firefox.gif
-│   │   ├── compatible_ie.gif
-│   │   ├── compatible_opera.gif
-│   │   ├── compatible_safari.gif
-│   │   ├── django.jpg
-│   │   ├── lamp.jpg
-│   │   ├── qrcode.jpg
-│   │   └── responsive.jpg
 │   └── js
-│       ├── base.js
-│       ├── ie10-viewport-bug-workaround.js
-│       ├── ie-emulation-modes-warning.js
-│       ├── index.js
-│       └── layui.all.js
 └── templates #模板层
-    ├── about.html
-    ├── base.html
-    ├── blog.html
-    ├── blog_list.html
-    ├── contact.html
     └── index.html
 ```
 
