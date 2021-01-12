@@ -59,6 +59,7 @@ mysite
 └── templates #模板层
     └── index.html
 ```
+`pip3 install django==2.1`
 
 `python manage.py migrate `
 
