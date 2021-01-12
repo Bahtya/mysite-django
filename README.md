@@ -61,6 +61,7 @@ mysite
 ```
 `pip3 install django==2.1 requests`
 
+
 `python manage.py migrate `
 
 `python manage.py makemigration`
