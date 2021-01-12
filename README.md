@@ -60,4 +60,9 @@ mysite
     └── index.html
 ```
 
+`python manage.py migrate `
+
+`python manage.py makemigration`
+
+
 
